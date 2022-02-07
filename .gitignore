@@ -1,0 +1,5 @@
+node_modules
+.env
+replit.nix
+.replit
+package-lock.json

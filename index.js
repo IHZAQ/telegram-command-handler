@@ -1,7 +1,6 @@
 const TelegramBot = require("node-telegram-bot-api")
 const { Collection } = require("@discordjs/collection")
-const { prefix } = require("./config")
-const token = process.env.TOKEN
+const { prefix, token } = require("./config")
 
 const bot = new TelegramBot(token, {polling: true})
 

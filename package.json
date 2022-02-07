@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@discordjs/collection": "^0.5.0",
+    "express": "^4.17.2",
+    "node-telegram-bot-api": "^0.56.0"
+  }
+}

@@ -35,7 +35,7 @@ bot.on('message', async msg =>{
 const express = require("express")
 const app = express()
 app.get("/", (req,res) =>{
-  res.send("Skin Stealer Telegram Bot is ready.")
+  res.send("My Awesome Bot online")
   res.status(200)
 })
 app.listen(8000, ()=>{

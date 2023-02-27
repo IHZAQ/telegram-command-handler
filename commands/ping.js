@@ -1,6 +1,6 @@
 module.exports = {
   name: "ping",
-  execute: async (msg,bot,send,args) =>{
-    send(`Hi ${args[0]}. Your jobs is ${args[1]}?`)
+  execute: async (bot, msg, chat) =>{
+    bot.sendMessage(chat, "Pong!")
   }
 }

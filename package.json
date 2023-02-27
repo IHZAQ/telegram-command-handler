@@ -1,7 +1,24 @@
 {
+  "name": "skinstealertelegrambot",
+  "description": "- Simple, (very simple) and easy to use command handler for [node-telegram-bot-api](https://www.npmjs.com/package/node-telegram-bot-api)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "@discordjs/collection": "^0.5.0",
     "express": "^4.17.2",
-    "node-telegram-bot-api": "^0.56.0"
-  }
+    "node-telegram-bot-api": "^0.61.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IHZAQSTORM33/skinstelegrambackupcode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IHZAQSTORM33/skinstelegrambackupcode/issues"
+  },
+  "homepage": "https://github.com/IHZAQSTORM33/skinstelegrambackupcode#readme"
 }

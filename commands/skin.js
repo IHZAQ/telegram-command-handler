@@ -1,6 +1,6 @@
 module.exports = {
   name: "skin",
-  execute: async(msg,bot,send,args)=>{
-    send(`https://minotar.net/body/${args[0]}`)
+  execute: async(bot, msg, chat)=>{
+    bot.sendMessage(chat, `https://minotar.net/body/${msg.args[0]}`)
   }
 }

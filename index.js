@@ -1,34 +1,26 @@
 const TelegramBot = require("node-telegram-bot-api")
-const { Collection } = require("@discordjs/collection")
-const { prefix, token } = require("./config")
+let { token } = require("./config")
 
-const bot = new TelegramBot(token, {polling: true})
+const bot = new TelegramBot(token)
 
 const fs = require("fs")
 
-bot.commands = new Collection()
+bot.commands = new Map()
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for(const file of commandFiles){
   const command = require(`./commands/${file}`);
   bot.commands.set(command.name, command);
 }
-
-bot.on('message', async msg =>{
-  const content = msg.text.toLowerCase();
-  if(!content.startsWith(prefix)) return;
-  const args = content.slice(prefix.length).split(/ +/);
-  const commandName = args.shift().toLowerCase()
-  const command = bot.commands.get(commandName)
+bot.onText(/^\/(\w+)(?:@[\w-]+)?(?:\s+(.*))?$/, async (msg, match) => {
+  const chat = msg.chat.id
+  const command = bot.commands.get(match[1])
   if(!command) return;
-  async function send(str){
-    bot.sendMessage(msg.chat.id,str)
-  }
+  msg.args = match[2] ? match[2].split(/\s+/) : []
   try {
-    command.execute(msg,bot,send,args)
-  } catch(error){
+    command.execute(bot, msg, chat)
+  } catch (error) {
     console.log(error)
-    send("An oopsie had happen")
   }
 })
 //Express

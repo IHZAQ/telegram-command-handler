@@ -8,17 +8,19 @@
 - Make sure you had Node.js and NPM installed up to date on your system
 
 # How do you make a new commands?
-
+ 1. Go to Terminal/Shell and run `npm install` to install all important dependencies
  1. Make a new .js file in commands folder.
  2. Populate the file with the code represent here:
  ```js
  module.exports = {
 	name: "ping",
-	execute: async (msg,bot,send,args) =>{
-		send("Pong!")
+	execute: async (bot, msg, chat) =>{
+		bot.sendMessage(chat, "Pong!")
 	}
 }
  ```
+the `chat` variable represents chat id, so bot is gonna send a message "Pong!" to that chat
+
  If you want to make bot replied. do /ping. and it will replied with Pong!
-# One more thing (I forgot, what an idiot)
-In config.js, there a prefix and token, prefix represent your desire prefix(I suggest keep it /), and token is bot token you get from @BotFather. that's it!, now try start it and see if its work.
+
+I also advised you to visit the [Github](https://github.com/yagop/node-telegram-bot-api) repository of node-telegram-bot-api package so you can get more information on how to send a picture, do advance stuff, and etc
